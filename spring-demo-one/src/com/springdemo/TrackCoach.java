@@ -18,12 +18,12 @@ public class TrackCoach implements Coach {
 		return "Just Do It: " + fortuneService.getFortune();
 	}
 	
-	// add an init method
+	// add an init method in the bean life cycle demo
 	public void doMyStartupStuff() {
 		System.out.println("TrackCoach: inside method doMyStartupStuff");
 	}
 	
-	// add an destroy method
+	// add an destroy method in the bean life cycle demo
 	public void doMyCleanupSuffYoYo() {
 		System.out.println("TrackCoach: inside method doMyCleanupStuffYoYo");
 	}
