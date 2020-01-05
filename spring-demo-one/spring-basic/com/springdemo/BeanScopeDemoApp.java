@@ -9,7 +9,7 @@ public class BeanScopeDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanLifeCycle-applicationContext.xml");
 		
 		// retrieve bean from spring container
-		Coach theCoach = context.getBean("myCoach", Coach.class);
+		Coach1 theCoach = context.getBean("myCoach", Coach1.class);
 		
 		System.out.println(theCoach.getDailyWorkout());
 		

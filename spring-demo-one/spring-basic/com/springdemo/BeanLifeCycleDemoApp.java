@@ -9,8 +9,8 @@ public class BeanLifeCycleDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
 		
 		// retrieve bean from spring container
-		Coach theCoach = context.getBean("myCoach", Coach.class);
-		Coach alphaCoach = context.getBean("myCoach", Coach.class);
+		Coach1 theCoach = context.getBean("myCoach", Coach1.class);
+		Coach1 alphaCoach = context.getBean("myCoach", Coach1.class);
 		
 		// check if they are the same beans
 		boolean result = theCoach == alphaCoach;
