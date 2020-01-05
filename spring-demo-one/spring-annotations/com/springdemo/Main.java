@@ -22,6 +22,9 @@ public class Main {
 		// call a method on the bean
 		System.out.println(theCoach.getDailyWorkout());
 		
+		// call a method with dependency injection
+		System.out.println(theCoach.getDailyFortune());
+		
 		// close the context
 		context.close();
 	}
