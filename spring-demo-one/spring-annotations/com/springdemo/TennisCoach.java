@@ -12,15 +12,34 @@ import org.springframework.stereotype.Component;
 @Component("thatSillyCoach")
 public class TennisCoach implements Coach1 {
 	
+	// We can also apply Dependency Injection via fields
+	// @Autowired
 	private FortuneService1 fortuneService;
+	
+	// Define a default constructor
+	public TennisCoach() {
+		System.out.println(">> TennisCoach: inside default constructor");
+	}
+	
+	/**
+	 * This setter applies a Dependency Injection by setter. We can also 
+	 * apply a Dependency Injection by a regular method
+	 * @param fortuneService1
+	 */
+	@Autowired
+	public void SetFortuneService(FortuneService1 fortuneService) {
+		System.out.println(">> TennisCoach: inside setter method");
+		this.fortuneService = fortuneService;
+	}
 	
 	/**
 	 * Dependency Injection by Constructor
-	 */
+	 *
 	@Autowired
 	public TennisCoach(FortuneService1 fortuneService) {
 		this.fortuneService = fortuneService;
 	}
+	*/
 
 	@Override
 	public String getDailyWorkout() {
