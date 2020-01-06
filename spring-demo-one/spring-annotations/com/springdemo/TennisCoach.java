@@ -1,6 +1,7 @@
 package com.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -27,6 +28,7 @@ public class TennisCoach implements Coach1 {
 	 * @param fortuneService1
 	 */
 	@Autowired
+	@Qualifier("randomFortuneService") // This is when we have more than one dependency classes
 	public void SetFortuneService(FortuneService1 fortuneService) {
 		System.out.println(">> TennisCoach: inside setter method");
 		this.fortuneService = fortuneService;
