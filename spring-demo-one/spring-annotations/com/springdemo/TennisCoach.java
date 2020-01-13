@@ -2,6 +2,7 @@ package com.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
  * constructor implements Dependency Injection
  */
 @Component("thatSillyCoach")
+@Scope("prototype")
 public class TennisCoach implements Coach1 {
 	
 	// We can also apply Dependency Injection via fields
