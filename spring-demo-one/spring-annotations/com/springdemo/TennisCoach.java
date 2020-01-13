@@ -1,8 +1,8 @@
 package com.springdemo;
 
+import javax.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
  * constructor implements Dependency Injection
  */
 @Component("thatSillyCoach")
-@Scope("prototype")
 public class TennisCoach implements Coach1 {
 	
 	// We can also apply Dependency Injection via fields
@@ -34,6 +33,18 @@ public class TennisCoach implements Coach1 {
 	public void SetFortuneService(FortuneService1 fortuneService) {
 		System.out.println(">> TennisCoach: inside setter method");
 		this.fortuneService = fortuneService;
+	}
+	
+	// define my init method
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> TennisCoach: inside of doMyStartupStuff()");
+	}
+		
+	// define my destroy method
+	@PreDestroy
+	public void  doMyCleanupStuff() {
+		System.out.println(">> TennisCoach: inside of doMyCleanupStuff()");
 	}
 	
 	/**
