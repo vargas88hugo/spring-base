@@ -4,19 +4,19 @@ import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.springboot.backend.models.entity.Cliente;
-import com.springboot.backend.models.services.IClienteService;
+import com.springboot.backend.models.entity.Client;
+import com.springboot.backend.models.services.IClientService;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api")
-public class ClienteRESTController {
+public class ClientRESTController {
 
 	@Autowired
-	private IClienteService clienteService;
+	private IClientService clientService;
 	
-	@GetMapping("/clientes")
-	public List<Cliente> index() {
-		return clienteService.findAll();
+	@GetMapping("/clients")
+	public List<Client> index() {
+		return clientService.findAll();
 	}
 }

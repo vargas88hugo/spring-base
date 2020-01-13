@@ -4,19 +4,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.springboot.backend.models.dao.IClienteDao;
-import com.springboot.backend.models.entity.Cliente;
+import com.springboot.backend.models.dao.IClientDao;
+import com.springboot.backend.models.entity.Client;
 
 @Service
-public class ClienteServiceImpl implements IClienteService {
+public class ClientServiceImpl implements IClientService {
 
 	@Autowired
-	private IClienteDao clienteDao;
+	private IClientDao clientDao;
 	
 	@Override
 	@Transactional(readOnly = true)
-	public List<Cliente> findAll() {
-		return (List<Cliente>) clienteDao.findAll();
+	public List<Client> findAll() {
+		return (List<Client>) clientDao.findAll();
 	}
 
 }

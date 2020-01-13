@@ -5,15 +5,15 @@ import java.util.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name="clientes")
-public class Cliente implements Serializable {
+@Table(name="clients")
+public class Client implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String nombre;
-	private String apellido;
+	private String first_name;
+	private String last_name;
 	private String email;
 	
 	@Column(name = "create_at")
@@ -26,17 +26,17 @@ public class Cliente implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
+	public String getFirstName() {
+		return first_name;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setFirstName(String firstName) {
+		this.first_name = firstName;
 	}
-	public String getApellido() {
-		return apellido;
+	public String getLastName() {
+		return last_name;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setLastName(String lastName) {
+		this.last_name = lastName;
 	}
 	public String getEmail() {
 		return email;
