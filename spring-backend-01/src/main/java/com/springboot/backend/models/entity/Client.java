@@ -20,6 +20,11 @@ public class Client implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
 	
+	@PrePersist
+	public void prePersist() { // This method is to update the date when it changes
+		createAt = new Date();
+	}
+	
 	public Long getId() {
 		return id;
 	}
