@@ -3,7 +3,8 @@ package com.springdemo;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan("com.springdemo")
+// @ComponentScan("com.springdemo")
+@PropertySource("classpath:sport.properties")
 public class SportConfig {	
 	
 	// define bean for our fortune service
